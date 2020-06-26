@@ -4,21 +4,21 @@ unset($CFG);
 global $CFG;
 $CFG = new stdClass();
 
-$CFG->dbtype    = getenv('DATABASE_TYPE');
+$CFG->dbtype    = 'pgsql';
 $CFG->dblibrary = 'native';
-$CFG->dbhost    = getenv('DATABASE_HOST');
-$CFG->dbname    = getenv('DATABASE_NAME');
-$CFG->dbuser    = getenv('DATABASE_USER');
-$CFG->dbpass    = getenv('DATABASE_PASSWORD');
+$CFG->dbhost    = 'ec2-35-173-94-156.compute-1.amazonaws.com';
+$CFG->dbname    = 'd7l1ue9vc94elp';
+$CFG->dbuser    = 'fyrlumipptmdtp';
+$CFG->dbpass    = 'cc0ed1b13803e351d2e9a495f773b44c0b8f70f0a643c99c5a9920829a47374b';
 $CFG->prefix    = 'mdl_';
 $CFG->dboptions = array (
   'dbpersist' => 0,
-  'dbport' => getenv('DATABASE_PORT'),
+  'dbport' => '5432',
   'dbsocket' => '',
 );
 
-$CFG->wwwroot   = getenv('WWWROOT');
-$CFG->dataroot  = getenv('DATAROOT');
+$CFG->wwwroot   = '/tmp';
+$CFG->dataroot  = 'http://gradlearning.herokuapp.com/';
 $CFG->admin     = 'admin';
 
 $CFG->directorypermissions = 0777;
