@@ -18,7 +18,7 @@ $CFG->dboptions = array (
 );
 
 $CFG->wwwroot   = '/tmp';
-$CFG->dataroot  = 'http://gradlearning.herokuapp.com/';
+$CFG->dataroot  = 'http://gradlearning.herokuapp.com';
 $CFG->admin     = 'admin';
 
 $CFG->directorypermissions = 0777;
