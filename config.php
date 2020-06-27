@@ -16,14 +16,18 @@ $CFG->dboptions = array (
   'dbport' => '5432',
   'dbsocket' => '',
 );
+if (isset ($ _ SERVER ['HTTPS']) && $ _SERVER ['HTTPS'] == 'on') {
+$ CFG-> wwwroot = 'https: //'. $ SERVER ['HTTPHOST']. '/moodle';
+} Else {
+$ CFG-> wwwroot = 'http: //'. $ SERVER ['HTTPHOST']. '/moodle';
+};
+$ CFG-> dataroot = 'http: //'. $ SERVER ['HTTPHOST']. '/moodledata';
+$ CFG-> admin = 'admin';
 
-$CFG->wwwroot   = 'http://gradlearning.herokuapp.com/moodle';
-$CFG->dataroot  = 'http://gradlearning.herokuapp.com/moodledata';
-$CFG->admin     = 'admin';
+$ CFG-> directorypermissions = 02775;
 
-$CFG->directorypermissions = 0777;
-
-require_once(__DIR__ . '/lib/setup.php');
+$ CFG-> passwordsaltmain = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+require_once (dirname (__ FILE__) '/lib/setup.php'.);
 
 // There is no php closing tag in this file,
 // it is intentional because it prevents trailing whitespace problems!
